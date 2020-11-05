@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+<style type="text/css">
+.form-style-3 {
+	margin: 0 auto;
+	max-width: 850px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.form-style-3 label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.form-style-3 label>span {
+	float: left;
+	width: 100px;
+	/* color: #F072A9; */
+	font-weight: normal;
+	font-size: 15px;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+.form-style-3 fieldset {
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	margin: 0px 0px 10px 0px;
+	border: 1px solid #FFD2D2;
+	padding: 20px;
+	background: #FFF4F4;
+	box-shadow: inset 0px 0px 15px #FFE5E5;
+	-moz-box-shadow: inset 0px 0px 15px #FFE5E5;
+	-webkit-box-shadow: inset 0px 0px 15px #FFE5E5;
+}
+
+.form-style-3 fieldset legend {
+	text-align: center;
+	color: #FFA0C9;
+	border-top: 1px solid #FFD2D2;
+	border-left: 1px solid #FFD2D2;
+	border-right: 1px solid #FFD2D2;
+	border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	background: #FFF4F4;
+	padding: 0px 8px 3px 8px;
+	box-shadow: -0px -1px 2px #F1F1F1;
+	-moz-box-shadow: -0px -1px 2px #F1F1F1;
+	-webkit-box-shadow: -0px -1px 2px #F1F1F1;
+	font-weight: bold;
+	color: gray;
+	border-top: 1px solid #FFD2D2;
+	border-left: 1px solid #FFD2D2;
+	border-right: 1px solid #FFD2D2;
+	border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	background: #FFF4F4;
+	padding: 0px 8px 3px 8px;
+	box-shadow: -0px -1px 2px #F1F1F1;
+	-moz-box-shadow: -0px -1px 2px #F1F1F1;
+	-webkit-box-shadow: -0px -1px 2px #F1F1F1;
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.form-style-3 textarea {
+	width: 250px;
+	height: 100px;
+}
+
+.form-style-3 input[type=text], .form-style-3 input[type=date],
+	.form-style-3 input[type=datetime], .form-style-3 input[type=number],
+	.form-style-3 input[type=search], .form-style-3 input[type=time],
+	.form-style-3 input[type=url], .form-style-3 input[type=email],
+	.form-style-3 select, .form-style-3 textarea {
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border: 1px solid #FFC2DC;
+	outline: none;
+	/* color: #F072A9; */
+	padding: 10px 8px 5px 8px;
+	box-shadow: inset 1px 1px 4px #FFD5E7;
+	-moz-box-shadow: inset 1px 1px 4px #FFD5E7;
+	-webkit-box-shadow: inset 1px 1px 4px #FFD5E7;
+	background: #FFEFF6;
+	width: 80%;
+	margin-left: 10px;
+	font-weight: normal;
+}
+
+.form-style-3  input[type=submit], .form-style-3  input[type=button] {
+	background: #EB3B88;
+	border: 1px solid #C94A81;
+	padding: 5px 15px 5px 15px;
+	color: #FFCBE2;
+	box-shadow: inset -1px -1px 3px #FF62A7;
+	-moz-box-shadow: inset -1px -1px 3px #FF62A7;
+	-webkit-box-shadow: inset -1px -1px 3px #FF62A7;
+	border-radius: 3px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	font-weight: bold;
+}
+
+.required {
+	color: red;
+	font-weight: normal;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.btn-3 {
+  background: rgb(0,172,238);
+background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  
+}
+.btn-3 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-3:before,
+.btn-3:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+   background: rgba(2,126,251,1);
+  transition: all 0.3s ease;
+}
+.btn-3:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-3:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3:hover{
+   background: transparent;
+  box-shadow: none;
+}
+.btn-3:hover:before {
+  height: 100%;
+}
+.btn-3:hover:after {
+  width: 100%;
+}
+.btn-3 span:hover{
+   color: rgba(2,126,251,1);
+}
+.btn-3 span:before,
+.btn-3 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+   background: rgba(2,126,251,1);
+  transition: all 0.3s ease;
+}
+.btn-3 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-3 span:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3 span:hover:before {
+  height: 100%;
+}
+.btn-3 span:hover:after {
+  width: 100%;
+}
+</style>
+</head>
+<body>
+	<div class="form-style-3">
+		<form th:action="${ACTION}" method="post" th:object="${USER}">
+			<fieldset>
+				<legend>ADD USER</legend>
+				<label for="field1"><span>Mã KH </span><input
+					type="text" th:field="*{maKH}" class="input-field" name="field1" value="" /></label> 
+				<label for="field2"><span>Họ tên </span><input
+					type="text" th:field="*{hoTen}" class="input-field" name="field2" value="" /></label> 
+				<label for="field3"><span>Địa chỉ </span><input
+					type="text" th:field="*{diaChi}" class="input-field" name="field3" value="" /></label> 
+				<label for="field4"><span>Số điện thoại </span><input 
+					type="text" th:field="*{soDienThoai}" class="input-field" name="field4" value="" /></label> 
+				<label for="field5"><span>Tài khoản </span><input 
+					type="text" th:field="*{taiKhoan}" class="input-field" name="field5" value="" /></label> 
+				<label for="field6"><span>Mật khẩu </span><input 
+					type="text" th:field="*{matKhau}" class="input-field" name="field6" value="" /></label> 
+				<label for="field7"><span>Email </span><input 
+					type="text" th:field="*{email}" class="input-field" name="field7" value="" /></label> 
+				<label for="field8"><span>Vai trò </span>
+					<select th:field="*{vaiTro}" name="field8" class="select-field">
+						<option value="User">User</option>
+						<option value="Admin">Admin</option>
+					</select>
+				</label>
+				<button type="submit" class="custom-btn btn-3"><span>Save</span></button>
+				<button type="reset" class="custom-btn btn-3"><span>Cancel</span></button>
+				<a th:href="@{/users/}" class="custom-btn btn-3" style="text-align: center;"><span>New</span></a>
+			</fieldset>
+			<fieldset>
+				<legend>LIST USER</legend>
+				<!-- <div th:action="@{/users/find}" class="">
+					<input type="text" name="name" placeholder="Enter Name" class=""/>
+					<button type="submit" class="custom-btn btn-3"><span>Find</span></button>
+				</div>
+				<hr /> -->
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<td>Mã Khách Hàng</td>
+							<td>Họ Tên</td>
+							<td>Địa chỉ</td>
+							<td>Số Điện Thoại</td>
+							<td>Tài Khoản</td>
+							<td>Mật Khẩu</td>
+							<td>Email</td>
+							<td>Vai Trò</td>
+							<td>&nbsp;</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="item : ${users}">
+							<td th:text="${item.maKH}"></td>
+							<td th:text="${item.hoTen}"></td>
+							<td th:text="${item.diaChi}"></td>
+							<td th:text="${item.soDienThoai}"></td>
+							<td th:text="${item.taiKhoan}"></td>
+							<td th:text="${item.matKhau}"></td>
+							<td th:text="${item.email}"></td>
+							<td th:text="${item.vaiTro}"></td>
+							<td><a th:href="@{'/users/edit/' + ${item.maKH}}"
+								class="btn btn-primary btn-sm">Edit</a> | <a
+								th:href="@{'/users/delete/' + ${item.maKH}}"
+								class="btn btn-danger btn-sm">Delete</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>
